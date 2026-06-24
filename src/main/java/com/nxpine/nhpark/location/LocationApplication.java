@@ -1,13 +1,13 @@
-package com.nxpine.nhpark.address;
+package com.nxpine.nhpark.location;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AddressApplication {
+public class LocationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AddressApplication.class, args);
+		SpringApplication.run(LocationApplication.class, args);
 	}
 
 }

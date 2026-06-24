@@ -11,10 +11,10 @@
 		<relativePath /> </parent>
 
 	<groupId>com.nxpine.nhpark</groupId>
-	<artifactId>nhpark-location-service</artifactId>
+	<artifactId>nhpark-address-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>nhpark-location-service</name>
-	<description>nhpark location service</description>
+	<name>nhpark-address-service</name>
+	<description>nhpark address service</description>
 
 	<properties>
 		<java.version>17</java.version>
