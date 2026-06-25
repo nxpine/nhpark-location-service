@@ -24,10 +24,20 @@ public class LocationServiceImpl implements LocationService {
         return locationRepository.findAll();
     }
 
-	@Override
-	public Location getLocationById(Long id) {
-		return locationRepository.findById(id).orElse(null);
-	}
+    @Override
+    public Location getLocationById(Long id) {
+        return locationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Location not found: " + id));
+    }
 
-	
+    @Override
+    public Location createLocation(Location newLocation) {
+        return locationRepository.save(newLocation);
+    }
+
+    @Override
+    public Location updateLocation(Long id, Location updatedLocation) {
+        return locationRepository.save(updatedLocation);
+    }
+
 }
