@@ -3,6 +3,7 @@ package com.nxpine.nhpark.location.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,5 +49,9 @@ public class LocationController {
     public Location update(@PathVariable Long id, @RequestBody Location updatedLocation) {
         return locationService.updateLocation(id, updatedLocation);
     }
-
+  //delete customer
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+    	locationService.deleteLocation(id);
+    }
 }
