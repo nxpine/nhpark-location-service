@@ -1,10 +1,10 @@
-package com.nxpine.nhpark.location.service;
+package com.nxpine.nhpark.vehicle.service;
 
 import java.util.List;
 
-import com.nxpine.nhpark.location.domain.Location;
+import com.nxpine.nhpark.vehicle.domain.Location;
 
-public interface LocationService {
+public interface VehicleService {
 
     List<Location> getAllLocations();
 

@@ -1,12 +1,12 @@
-package com.nxpine.nhpark.location.domain;
+package com.nxpine.nhpark.vehicle.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "location")
+@Table(name = "vehicle")
 @Data
-public class Location {
+public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    

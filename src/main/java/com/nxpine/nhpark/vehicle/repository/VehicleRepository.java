@@ -1,11 +1,11 @@
-package com.nxpine.nhpark.location.repository;
+package com.nxpine.nhpark.vehicle.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.nxpine.nhpark.location.domain.Location;
+import com.nxpine.nhpark.vehicle.domain.vehicle;
 
 @Repository
-public interface LocationRepository extends JpaRepository<Location, Long> {
+public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
     // Standard CRUD methods are automatically provided by JpaRepository
 }
