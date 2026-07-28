@@ -9,17 +9,27 @@ import lombok.Data;
 public class Vehicle {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
-    @Column(name = "loc_id")
-    private Long locationId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "loc_desc")
-    private String locationDescription;
+    @Column(nullable = false)
+    private String make;
 
-    @Column(name = "addr_id")
-    private Long addressId;
+    @Column(nullable = false)
+    private String model;
 
-    @Column(name = "cust_id")
+    @Column
+    private Integer capacity;
+
+    @Column
+    private Integer year;
+
+    @Column(name = "license_plate")
+    private String licensePlate;
+
+    @Column
+    private String color;
+
+    @Column(name = "customer_id")
     private Long customerId;
-
 }

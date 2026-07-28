@@ -20,7 +20,7 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<Vehicle> getAllVehicle() {
+    public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }
 
@@ -42,5 +42,10 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
 	public void deleteVehicle(Long id) {
 		vehicleRepository.deleteById(id);		
+	}
+
+	@Override
+	public List<Vehicle> getVehicleByCustomerId(Long customerId) {
+		return vehicleRepository.getVehicleByCustomerId(customerId);
 	}
 }

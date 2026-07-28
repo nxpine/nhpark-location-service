@@ -2,19 +2,20 @@ package com.nxpine.nhpark.vehicle.service;
 
 import java.util.List;
 
-import com.nxpine.nhpark.vehicle.domain.Location;
+import com.nxpine.nhpark.vehicle.domain.Vehicle;
 
 public interface VehicleService {
 
-    List<Location> getAllLocations();
+    List<Vehicle> getAllVehicles();
 
-    Location getLocationById(Long id);
+    Vehicle getVehicleById(Long id);
 
-    Location createLocation(Location newLocation);
+    Vehicle createVehicle(Vehicle newVehicle);
 
-    Location updateLocation(Long id, Location updatedLocation);
+    Vehicle updateVehicle(Long id, Vehicle updatedVehicle);
 
-	void deleteLocation(Long id);
+    void deleteVehicle(Long id);
+
+    List<Vehicle> getVehicleByCustomerId(Long customerId);
 
 }
-	

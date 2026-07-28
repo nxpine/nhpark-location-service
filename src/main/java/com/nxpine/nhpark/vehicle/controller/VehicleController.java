@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +16,7 @@ import com.nxpine.nhpark.vehicle.domain.Vehicle;
 import com.nxpine.nhpark.vehicle.service.VehicleService;
 
 @RestController
-@RequestMapping("vehicle")
+@RequestMapping("/vehicle")
 @CrossOrigin(origins = "*")
 public class VehicleController {
 
@@ -26,32 +26,38 @@ public class VehicleController {
         this.vehicleService = vehicleService;
     }
 
-    // GET all locations
+    // GET ALL VEHICLES
     @GetMapping
     public List<Vehicle> getAll() {
         return vehicleService.getAllVehicles();
     }
-
-    // GET location by ID
+    
+    @GetMapping("/customer/{customerId}")
+    public List<Vehicle> getVehiclesByCustomerId(@PathVariable Long customerId) {
+    	return this.vehicleService.getVehicleByCustomerId(customerId);
+    
+    }
+    // GET VEHICLE BY ID
     @GetMapping("/{id}")
-    public Vehicle get(@PathVariable Long id) {
+    public Vehicle getById(@PathVariable Long id) {
         return vehicleService.getVehicleById(id);
     }
 
-    // Create location
+    // CREATE VEHICLE
     @PostMapping
     public Vehicle create(@RequestBody Vehicle newVehicle) {
         return vehicleService.createVehicle(newVehicle);
     }
 
-    // Update location
-    @PatchMapping("/{id}")
+    // UPDATE VEHICLE (FULL UPDATE)
+    @PutMapping("/{id}")
     public Vehicle update(@PathVariable Long id, @RequestBody Vehicle updatedVehicle) {
         return vehicleService.updateVehicle(id, updatedVehicle);
     }
-  //delete customer
+
+    // DELETE VEHICLE
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-    	vehicleService.deleteVehicle(id);
+        vehicleService.deleteVehicle(id);
     }
 }
